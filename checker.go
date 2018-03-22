@@ -30,13 +30,13 @@ func checkerRun(hosts []string) {
 				conn, err = net.DialTimeout("tcp", host, 5*time.Second)
 			}
 			if err != nil {
-				log.Printf("[ERROR] dial to %s usage tls %t failed error: %v\n", host, *use_tls, err)
+				log.Printf("[ERROR] dial to %s usage tls %t failed error: %v\n", v, *use_tls, err)
 				continue
 			}
 
 			conn.Close()
 
-			log.Printf("[OK] dial to %s usage tls %t remote addr %s\n", host, *use_tls, conn.RemoteAddr())
+			log.Printf("[OK] dial to %s usage tls %t remote addr %s\n", v, *use_tls, conn.RemoteAddr())
 		}
 
 		time.Sleep(10 * time.Second)
